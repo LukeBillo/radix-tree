@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections.RadixTree", "Collections.RadixTree\Collections.RadixTree.csproj", "{F401A89A-B7D2-4C72-9D0F-CDC4FFD1BDEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections.RadixTree.Tests", "Collections.RadixTree.Tests\Collections.RadixTree.Tests.csproj", "{4C26E2DB-C793-4C13-BE99-2E358D2DAA98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F401A89A-B7D2-4C72-9D0F-CDC4FFD1BDEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F401A89A-B7D2-4C72-9D0F-CDC4FFD1BDEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F401A89A-B7D2-4C72-9D0F-CDC4FFD1BDEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F401A89A-B7D2-4C72-9D0F-CDC4FFD1BDEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C26E2DB-C793-4C13-BE99-2E358D2DAA98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C26E2DB-C793-4C13-BE99-2E358D2DAA98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C26E2DB-C793-4C13-BE99-2E358D2DAA98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C26E2DB-C793-4C13-BE99-2E358D2DAA98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
