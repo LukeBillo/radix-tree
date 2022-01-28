@@ -8,9 +8,9 @@ public class EnumerationTests
     [Fact]
     public void GivenARadixTreeWith8Words_WhenEnumerating_ThenAll8WordsAreReturned()
     {
-        var expectedWords = new List<string>
+        var expectedWords = new SortedSet<string>
         {
-            "hi", "hell", "hello", "him", "happy", "fin", "finish", "find"
+            "fin", "find", "finish", "happy", "hell", "hello", "hi", "him"
         };
 
         var tree = new RadixTree();
@@ -24,7 +24,7 @@ public class EnumerationTests
         {
             actualWords.Add(word);
         }
-        
+
         Assert.Equal(expectedWords, actualWords);
     }
 }

@@ -4,28 +4,30 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("Collections.RadixTree.Tests")]
 namespace Collections.RadixTree;
 
-public struct RadixTreeNode : IEnumerable<RadixTreeNode>
+internal record RadixTreeNode : IEnumerable<RadixTreeNode>, IComparable<RadixTreeNode>
 {
-    public RadixTreeNode()
+    internal RadixTreeNode()
     {
         Value = null;
         Children = new SortedSet<RadixTreeNode>();
         IsValidWord = false;
     }
     
-    public RadixTreeNode(string? value, SortedSet<RadixTreeNode> children, bool isValidWord)
+    internal RadixTreeNode(string? value, SortedSet<RadixTreeNode> children, bool isValidWord)
     {
         Value = value;
         Children = children;
         IsValidWord = isValidWord;
     }
 
-    public string? Value { get; private set; }
-    public SortedSet<RadixTreeNode> Children { get; private set; }
-    public bool IsValidWord { get; private set; }
+    internal string? Value { get; init; }
+    internal SortedSet<RadixTreeNode> Children { get; init; }
+    internal bool IsValidWord { get; init; }
     
-    public bool IsLeaf => Children.Count is 0;
-    
+    internal bool IsLeaf => Children.Count is 0;
+
+    internal bool IsValuePartOfWord(string word) => !string.IsNullOrEmpty(Value) && word.StartsWith(Value);
+
     public IEnumerator<RadixTreeNode> GetEnumerator()
     {
         foreach (var child in Children)
@@ -37,5 +39,14 @@ public struct RadixTreeNode : IEnumerable<RadixTreeNode>
     IEnumerator IEnumerable.GetEnumerator()
     {
         return GetEnumerator();
+    }
+
+    public int CompareTo(RadixTreeNode? other)
+    {
+        if (ReferenceEquals(this, other)) return 0;
+        if (ReferenceEquals(null, other)) return 1;
+        
+        var valueComparison = string.Compare(Value, other.Value, StringComparison.Ordinal);
+        return valueComparison != 0 ? valueComparison : IsValidWord.CompareTo(other.IsValidWord);
     }
 }

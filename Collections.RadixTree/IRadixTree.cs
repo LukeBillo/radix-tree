@@ -2,6 +2,6 @@
 
 public interface IRadixTree : ICollection<string>
 {
-    bool TryAdd(string value);
-    bool TryRemove(string value);
+    bool TryAdd(string word);
+    bool TryRemove(string word);
 }
